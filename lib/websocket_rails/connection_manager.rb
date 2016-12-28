@@ -48,7 +48,7 @@ module WebsocketRails
     # Primary entry point for the Rack application
     def call(env)
 
-      unless env['HTTP_CONNECTION'] == 'Upgrade'
+      unless env['HTTP_UPGRADE']
         raise(InvalidConnectionError)
       end
 
